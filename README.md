@@ -62,9 +62,10 @@ KIMI_API_KEY=...               # platform.moonshot.ai
 ```
 
 **Zero-cost path:** create a free account at [build.nvidia.com](https://build.nvidia.com),
-generate an API key, and set `NVIDIA_API_KEY`. The default model is
-`meta/llama-3.3-70b-instruct`; try `moonshotai/kimi-k2-instruct` via `NVIDIA_MODEL`
-for stronger tool use.
+generate an API key, and set `NVIDIA_API_KEY`. One key unlocks **two** entries in the
+provider dropdown — `z-ai/glm-5.2` and `minimaxai/minimax-m3` — so you can compare two
+frontier open models side by side for free (override via `NVIDIA_GLM_MODEL` /
+`NVIDIA_MINIMAX_MODEL`).
 
 Model choices and base URLs are overridable in the same file. Providers without a key simply
 show as "not configured" in the dropdown — everything else keeps working. All three run through

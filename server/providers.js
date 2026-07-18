@@ -34,12 +34,20 @@ export const providerDefs = [
     model: process.env.KIMI_MODEL || 'kimi-k2-turbo-preview',
   },
   {
-    id: 'nvidia',
-    label: 'NVIDIA NIM (free)',
+    id: 'nvidia-glm',
+    label: 'GLM-5.2 · NVIDIA free',
     kind: 'openai-compat',
     baseUrl: process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1',
     keyEnv: 'NVIDIA_API_KEY',
-    model: process.env.NVIDIA_MODEL || 'meta/llama-3.3-70b-instruct',
+    model: process.env.NVIDIA_GLM_MODEL || 'z-ai/glm-5.2',
+  },
+  {
+    id: 'nvidia-minimax',
+    label: 'MiniMax-M3 · NVIDIA free',
+    kind: 'openai-compat',
+    baseUrl: process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1',
+    keyEnv: 'NVIDIA_API_KEY',
+    model: process.env.NVIDIA_MINIMAX_MODEL || 'minimaxai/minimax-m3',
   },
 ];
 
