@@ -46,7 +46,7 @@ Claude Code login:
 
 *(Have an Anthropic API key instead of a subscription? `claude` accepts that at login too.)*
 
-### Provider option B — API keys (OpenAI / Gemini / Kimi)
+### Provider option B — API keys (NVIDIA free / OpenAI / Gemini / Kimi)
 
 ```bash
 cp .env.example .env
@@ -55,10 +55,16 @@ cp .env.example .env
 Open `.env` and uncomment/fill whichever keys you have:
 
 ```bash
+NVIDIA_API_KEY=nvapi-...       # build.nvidia.com — FREE tier, no card needed
 OPENAI_API_KEY=sk-...          # platform.openai.com
-GEMINI_API_KEY=...             # aistudio.google.com
+GEMINI_API_KEY=...             # aistudio.google.com (also has a free tier)
 KIMI_API_KEY=...               # platform.moonshot.ai
 ```
+
+**Zero-cost path:** create a free account at [build.nvidia.com](https://build.nvidia.com),
+generate an API key, and set `NVIDIA_API_KEY`. The default model is
+`meta/llama-3.3-70b-instruct`; try `moonshotai/kimi-k2-instruct` via `NVIDIA_MODEL`
+for stronger tool use.
 
 Model choices and base URLs are overridable in the same file. Providers without a key simply
 show as "not configured" in the dropdown — everything else keeps working. All three run through
