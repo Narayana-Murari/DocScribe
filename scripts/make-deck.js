@@ -54,6 +54,34 @@ function bullets(s, items, opts = {}) {
     x: 0.85, y: 4.2, w: 11, h: 0.5, fontFace: sans, fontSize: 14, color: 'A8C4C4', italic: true,
   });
   s.addShape('rect', { x: 0.85, y: 4.05, w: 2.2, h: 0.04, fill: { color: AMBER } });
+
+  // Team roster
+  const members = [
+    ['Abdul, Khaleel', 'abdul.khaleel', '2944731'],
+    ['Ali, Qasim', 'qasim.ali', '2941974'],
+    ['Govert, Giovanni', 'giovanni.govert', '2942615'],
+    ['Gowrishetty, Narayana Murari', 'n.gowrishetty', '2943110'],
+    ['KURMADASU, Nikhil', 'nikhil.kurmadasu', '2943111'],
+    ['Lemma, Alazar Seleshi', 'alazar.lemma', '2945878'],
+    ['Mandalaneni, Yadunandan', 'y.mandalaneni', '2944144'],
+    ['Wu, Feiyi', 'feiyi.wu', '2946000'],
+  ];
+  s.addText('GROUP 2', {
+    x: 0.85, y: 5.05, w: 3, h: 0.35, fontFace: sans, fontSize: 14, bold: true, color: AMBER, charSpacing: 2,
+  });
+  const memberLine = ([name, user, id]) => ([
+    { text: name, options: { bold: true, color: 'FFFFFF' } },
+    { text: `   ${user} · ${id}`, options: { color: 'A8C4C4' } },
+  ]);
+  const colOpts = { y: 5.45, w: 5.9, h: 1.9, fontFace: sans, fontSize: 12.5, valign: 'top', lineSpacingMultiple: 1.35 };
+  s.addText(
+    members.slice(0, 4).flatMap((m) => [...memberLine(m), { text: '', options: { breakLine: true } }]),
+    { x: 0.85, ...colOpts },
+  );
+  s.addText(
+    members.slice(4).flatMap((m) => [...memberLine(m), { text: '', options: { breakLine: true } }]),
+    { x: 7.0, ...colOpts },
+  );
 }
 
 // ── Slide 2: Problem ───────────────────────────────────────────
