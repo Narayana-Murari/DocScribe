@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedicPro Scribe — Agentic Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>MedicPro <em>Scribe</em></h1>
+      <span class="tag">Agentic clinical documentation — demo</span>
+    </div>
+    <div class="provider-box">
+      <label for="provider">LLM Provider</label>
+      <select id="provider"></select>
+    </div>
+  </header>
+
+  <main>
+    <!-- Column 1: patient + controls -->
+    <section class="col">
+      <h2>Patient</h2>
+      <select id="patient"></select>
+      <div id="patientCard" class="card"></div>
+      <div class="actions">
+        <button id="simulateBtn" class="btn primary">▶ Simulate Visit</button>
+        <button id="scribeBtn" class="btn accent" disabled>✦ Generate Note</button>
+        <button id="clearBtn" class="btn ghost">Clear</button>
+      </div>
+      <p class="hint">Live mode: focus the transcript and dictate with <strong>Wispr Flow</strong> — it types straight into the pane.</p>
+    </section>
+
+    <!-- Column 2: transcript -->
+    <section class="col">
+      <h2>Consultation Transcript <span id="transcriptSource" class="pill"></span></h2>
+      <textarea id="transcript" placeholder="Click 'Simulate Visit' to generate a consultation, or focus here and dictate with Wispr Flow…"></textarea>
+    </section>
+
+    <!-- Column 3: agent activity + note -->
+    <section class="col">
+      <h2>Scribe Agent <span id="agentStatus" class="pill"></span></h2>
+      <div id="activity" class="activity"></div>
+      <div id="note" class="note hidden"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

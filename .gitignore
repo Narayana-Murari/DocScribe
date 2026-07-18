@@ -1,0 +1,18 @@
+# Dependencies & local runtime (never commit)
+node_modules/
+.node/
+node.tar.gz
+
+# Secrets — API keys live here; keep out of git
+.env
+.env.local
+.env.*.local
+
+# Generated artifacts & logs
+*.pptx
+*.pdf
+server.log
+*.log
+
+# OS noise
+.DS_Store
